@@ -1,0 +1,134 @@
+ .aif_shares li{
+    display: inline-block;
+    vertical-align: top;
+    list-style-type: none;
+    position: relative;
+    margin-left: 10px;
+}
+
+.aif_shares a {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.aif_shares a i {
+    color: #409C97;
+
+    &:before {
+        font-size: 21px;
+        line-height: 28px;
+    }
+}
+
+
+.aif_shares_black a i {
+    color: #000;
+    font-size: 20px;
+}
+
+.aif_shares_white a i {
+    color: #fff;
+    font-size: 20px;
+}
+
+ .aif_shares_white a i.fa-whatsapp {
+     font-size: 21px;
+     position: relative;
+     top: 1px;
+ }
+
+ .aif_shares_colored-bg .aif_shares_fb {
+     background-color: #3b5998;
+ }
+
+ .aif_shares_colored-bg .aif_shares_ok {
+     background-color: #eb722e;
+ }
+
+ .aif_shares_colored-bg .aif_shares_vk {
+     background-color: #48729e;
+ }
+
+ .aif_shares_colored-bg .aif_shares_tw {
+     background-color: #00aced;
+ }
+
+ .aif_shares_transparent-bg .aif_shares_fb {
+     background-color: transparent;
+ }
+
+ .aif_shares_transparent-bg .aif_shares_ok {
+     background-color: transparent;
+ }
+
+ .aif_shares_transparent-bg .aif_shares_vk {
+     background-color: transparent;
+ }
+
+ .aif_shares_transparent-bg .aif_shares_tw {
+     background-color: transparent;
+ }
+
+
+.aif_shares_count {
+    display: none !important;
+    height: 20px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.aif_shares_white .aif_shares_count {
+    color: #fff;
+}
+
+.aif_shares_black .aif_shares_count {
+    color: #000;
+}
+
+ .aif_shares_count:before {
+     content: "";
+     position: absolute;
+     width: 1px;
+     top: 2px;
+     bottom: 2px;
+     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX///+nxBvIAAAAAXRSTlMz/za5cAAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=") 0 0 repeat-y;
+     margin-left: -8px;
+ }
+
+ .aif_shares_tg img{
+     width: 24px;
+     position: relative;
+     top: 3px;
+ }
+
+ .aif_shares_ws img{
+     width: 24px;
+     position: relative;
+     top: 2px;
+ }
+
+.card__socials {
+
+    .aif_shares a{
+        background: #304053;
+    }
+
+    .aif_shares a i {
+        color: #fff;
+    }
+}
+
+ .aif_shares a i.fa-telegram::before, .aif_shares a i.fa-whatsapp::before {
+    font-size: 21px;
+}
+
+

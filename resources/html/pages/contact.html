@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="contact-page">
+@@include('../partials/layout/_head.html', { "title": "Контакты" })
+<body>
+<script type="text/javascript">
+    window.appModules = ['menu', 'share-block-init', ];
+</script>
+@@include('../partials/layout/_menu.html')
+<div class="wrapper">
+	@@include('../partials/layout/_header.html')
+	<div class="bnr-block">
+		<a href="#">
+			<img src="../images/bnr.jpg" />
+		</a>
+	</div>
+	<div class="topline">
+		<div class="breadcrumbs">
+			<a href="/">Главная</a> / <span>Контакты</span>
+		</div>
+	</div>
+	<main>
+		<div class="main__header">
+			<button class="burger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<div class="page-title">Контакты</div>
+		</div>
+		<div class="article-wrapper">
+			<article class="article">
+				<div class="article__top">
+					<div class="big-text">Редакция сайта icmos.ru</div>
+					<div class="article__text">
+						<p>Тел.: +7 (903) 796-06-15<br>
+							e-mail: info@icmos.ru</p>
+					</div>
+					<div class="big-text">Организация пресс-мероприятий</div>
+					<div class="article__text">
+						<p>Тел.: +7 (495) 796-05-35<br>
+							e-mail: press@icmos.ru</p>
+					</div>
+					<div class="big-text">Call-Центр</div>
+					<div class="article__text">
+						<p>Тел.: +7 (495) 925-00-90</p>
+					</div>
+					<div class="article__text"><p>Свидетельство о регистрации средства массовой информации ЭЛ № ФС 77 - 67758</p></div>
+				</div>
+				<div class="article__shares">
+					<ul class="aif_shares_js aif_shares">
+						<li class="aif_shares_vk">
+							<a href="#" class="aif_shares_vk_link_js" target="_blank">
+								<img src="../images/icons/vk_black.svg" />
+							</a>
+							<span class="aif_shares_vk_share_count_js aif_shares_count">0</span>
+						</li>
+						<li class="aif_shares_ok">
+							<a href="#" class="aif_shares_ok_link_js" target="_blank">
+								<img src="../images/icons/ok_black.svg" />
+							</a>
+							<span class="aif_shares_ok_share_count_js aif_shares_count">0</span>
+						</li>
+						<li class="aif_shares_tg">
+							<a href="#" class="aif_shares_tg_link_js" target="_blank">
+								<img src="../images/icons/tg_black.svg" />
+							</a>
+						</li>
+					</ul>
+				</div>
+			</article>
+		</div>
+	</main>
+
+	<div class="bnr-bottom">
+		<a href="">
+			<img class="bnr-bottom__img" src="../images/moscow-24_bnr.jpg" />
+		</a>
+	</div>
+</div>
+@@include('../partials/layout/_footer.html')
+<script src="../js/app.js" type="text/javascript"></script>
+<script src="https://aif.ru/resources/front/js/modules/sharecount/aif-shares.jquery.js?t=444" type="text/javascript"></script>
+<script>
+    $(document).ready(function(){
+        $('.aif_shares_js').aifShares({providers: ['vk', 'ok', 'tg']}
+        );
+    });
+</script>
+</body>
+</html>
