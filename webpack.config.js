@@ -1,73 +1,78 @@
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserWebpackPlugin = require('terser-webpack-plugin')
-const FileIncludeWebpackPlugin = require('file-include-webpack-plugin')
 
-const isDev = process.env.NODE_ENV === 'development'
-console.log('isDev: ', isDev)
+const PATHS = {
+  src: path.resolve(process.cwd(), "resources"),
+  dist: path.resolve(process.cwd(), "public")
+};
 
 module.exports = {
     mode: 'development',
-    entry: './resources/js/app.js',
+    devtool: 'inline-source-map',
+    entry: {
+      common: `${PATHS.src}/js/common`,
+      index: `${PATHS.src}/index`,
+      news: `${PATHS.src}/js/news`,
+    },
     output: {
-        filename: 'app.js',
         path: path.resolve(__dirname, 'public'),
-        //assetModuleFilename: '[name][ext]',
+        publicPath: '',
+        assetModuleFilename: 'images/[name][ext]',
         clean: true
     },
-    performance: {
-        hints: false,
-        maxAssetSize: 512000,
-        maxEntrypointSize: 512000
-    },
     devServer: {
+      historyApiFallback: true,
         port: 9000,
         compress: true,
-        hot: isDev,
-        static: {
-            directory: path.join(__dirname, 'dist')
-        }
+        open: true,
+        hot: true
     },
     module: {
         rules: [
             {
-                test: /\.scss$/,
-                use: [
-                        {
-                            loader: MiniCssExtractPlugin.loader,
-                            options: {
-                                publicPath: "/public/css/",
-                            },
-                        }, 'css-loader', 'sass-loader'
-                ]
+              test: /\.js$/,
+              exclude: /node_modules/,
+              use: {
+                loader: 'babel-loader',
+              },
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource'
+              test: /\.html$/,
+              use: [
+                {
+                  loader: 'html-loader',
+                },
+              ],
+            },
+            {
+              test: /\.(scss|css)$/,
+              use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'sass-loader',
+              ],
+            },
+            {
+              test: /\.(png|svg|jpg|jpeg|gif)$/i,
+              type: 'asset/resource'
             }
         ]
     },
     plugins: [
         new htmlWebpackPlugin({
-            title: 'My web page',
             filename: 'index.html',
-            template: './resources/html/index.html',
-            minify: {
-                collapseWhitespace: !isDev
-            }
+            template: './resources/index.html',
+            chunks: ["index", "common"],
         }),
+        new htmlWebpackPlugin({
+          filename: 'news.html',
+          template: './resources/html/pages/news.html',
+          chunks: ["news", "common"],
+      }),
         new MiniCssExtractPlugin({
-            filename: 'style.css'
+          filename: '[name].css',
+          chunkFilename: '[id].css',
         }),
-        new FileIncludeWebpackPlugin(
-            {
-                source: './resources/html/pages/',
-                htmlBeautifyOptions: {
-                    'indent_size': 2
-                }
-            },
-        )
     ]
 };

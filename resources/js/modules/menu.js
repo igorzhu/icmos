@@ -1,6 +1,11 @@
 import $ from "jquery";
 
+console.log('menu.js');
+
 function init() {
+
+    console.log('menu init');
+
 
     $('body').on('click', '.burger', function (e) {
         $('.menu').addClass('menu_show');
