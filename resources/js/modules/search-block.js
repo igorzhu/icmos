@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 
-function init() {
+function searchBlock() {
 
     $('body').on('click', '.search-btn_js', function(){
         //$('.search-section').addClass('show');
@@ -15,6 +15,4 @@ function init() {
 
 }
 
-export default {
-    init
-}
+export default searchBlock;

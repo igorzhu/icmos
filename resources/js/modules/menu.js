@@ -1,11 +1,6 @@
 import $ from "jquery";
 
-console.log('menu.js');
-
-function init() {
-
-    console.log('menu init');
-
+export function menu() {
 
     $('body').on('click', '.burger', function (e) {
         $('.menu').addClass('menu_show');
@@ -18,6 +13,6 @@ function init() {
     });
 }
 
-export default {
+/*export default {
     init
-}
+}*/

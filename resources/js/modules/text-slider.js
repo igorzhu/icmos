@@ -1,7 +1,7 @@
 import $ from "jquery";
 import "owl.carousel";
 
-function init() {
+export default function textSlider() {
 
     let winW = window.innerWidth;
 
@@ -66,6 +66,6 @@ function removeTextSlider(){
 }
 
 
-export default {
+/*export default {
     init
-}
+}*/
