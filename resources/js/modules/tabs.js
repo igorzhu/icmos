@@ -1,6 +1,6 @@
-import $ from "jquery";
+//import $ from "jquery"; / не нужно, т.к. подключаем jquery глобально в webpack.config.js
 
-function init() {
+export default function tabs() {
 
     $('body').on('click', '.tab-btn-js', function (e) {
 
@@ -9,13 +9,13 @@ function init() {
         $(this).parents('.tab-links-js').find('.tab-btn-js').removeClass('active');
         $(this).addClass('active');
 
-        let tab = $("." + $(this).data(tab).tab);
+        let tab = $("." + $(this).data('tab'));
 
         $('.tab').removeClass('show-tab');
         tab.addClass('show-tab');
-    })
+    });
 }
 
-export default {
+/*export default {
     init
-}
+}*/

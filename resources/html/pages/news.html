@@ -1,13 +1,14 @@
 <!doctype html>
 <html class="news-page">
-<!-- @@include('../partials/layout/_head.html', { "title": "Новости" }) -->
+@@include('../partials/layout/_head.html', { "title": "Новости" })
 <body>
 <!-- <script type="text/javascript">
     window.appModules = ['menu'];
-</script>
-@@include('../partials/layout/_menu.html') -->
+</script> -->
+<%= require('html-loader!../partials/layout/_menu.html').default %>
+@@include('../partials/layout/_menu.html')
 	<div class="wrapper">
-		<!-- @@include('../partials/layout/_header.html') -->
+		@@include('../partials/layout/_header.html')
 		<div class="bnr-block">
 			<a href="#">
 				<img src="../../images/bnr.jpg" />
@@ -103,7 +104,7 @@
 			</a>
 		</div>
 	</div>
-	<!-- @@include('../partials/layout/_footer.html')
-	<script src="../js/app.js" type="text/javascript"></script> -->
+	@@include('../partials/layout/_footer.html')
+<%= require('html-loader!../partials/layout/_footer.html').default %>
 </body>
 </html>

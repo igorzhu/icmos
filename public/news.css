@@ -1334,12 +1334,12 @@ html.media-page .article {
   display: none;
 }
 .photo-slider.owl-carousel .owl-nav button.owl-prev {
-  background: url(images/arrow_l.svg) no-repeat 0 0;
+  background: url(images/icons/arrow_l.svg) no-repeat 0 0;
   background-size: 100%;
   left: 20px;
 }
 .photo-slider.owl-carousel .owl-nav button.owl-next {
-  background: url(images/arrow_r.svg) no-repeat 0 0;
+  background: url(images/icons/arrow_r.svg) no-repeat 0 0;
   background-size: 100%;
   right: 20px;
 }

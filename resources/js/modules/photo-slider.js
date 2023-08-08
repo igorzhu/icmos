@@ -1,4 +1,4 @@
-import $ from "jquery";
+//import $ from "jquery"; // не нужно, т.к. подключаем jquery глобально в webpack.config.js
 import "owl.carousel";
 
 function init() {
