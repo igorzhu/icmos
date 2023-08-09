@@ -1,3 +1,5 @@
+import searchIcon from  '../../images/icons/close_white.svg';
+
 export default function search(){
 
     let search = `<div class="search-section">

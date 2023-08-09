@@ -16,6 +16,7 @@ module.exports = {
       common: `${PATHS.src}/js/common`,
       index: `${PATHS.src}/index`,
       news: `${PATHS.src}/js/news`,
+      article: `${PATHS.src}/js/article`,
     },
     output: {
         path: path.resolve(__dirname, 'public'),
@@ -71,15 +72,39 @@ module.exports = {
     },
     plugins: [
         new htmlWebpackPlugin({
+            title: 'Главная',
             filename: 'index.html',
             template: './resources/index.html',
             chunks: ["index", "common"],
+            inject: true,
+            hash: true,
+            meta: {
+                'description': { name: 'description', contnet: 'Описание главной страницы' },
+                'keyword': { name: 'keywords', content: 'icmos' },
+                'og:title': { property: 'og:title', content: 'Главная' },
+                'og:description': { property: 'og:description', content: 'icmos' },
+                'og:type': { property: 'og:type', content: 'website' },
+                'og:url': { property: 'og:url', content: 'https://icmos.ru/' },
+                'viewport': 'width=device-width,initial-scale=1,maximum-scale=3',
+                /*'og:image': { property: 'og:image', content: '...' },
+                'twitter:card': { name: 'twitter:card', content: 'summary_large_image' },
+                'twitter:title': { name: 'twitter:title', content: '...' },
+                'twitter:description': { name: 'twitter:description', content: '...' },
+                'twitter:image': { name: 'twitter:image', content: '...' }*/
+            }
         }),
         new htmlWebpackPlugin({
           filename: 'news.html',
           template: './resources/html/pages/news.html',
           chunks: ["news", "common"],
+          title: "Новости"
       }),
+        new htmlWebpackPlugin({
+            filename: 'article.html',
+            template: './resources/html/pages/article.html',
+            chunks: ["article", "common"],
+            title: "Статья"
+        }),
         new MiniCssExtractPlugin({
           filename: '[name].css',
           chunkFilename: '[id].css',

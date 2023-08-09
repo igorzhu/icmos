@@ -1,7 +1,7 @@
-import $ from "jquery";
+//import $ from "jquery"; // не нужно, т.к. подключаем jquery глобально в webpack.config.js
 
 
-function init() {
+export default function firstLetter() {
 
     $(document).ready(function(){
         let firstParagraph = $('.article__text > p:first-child'),
@@ -29,8 +29,4 @@ function init() {
         firstParagraph.empty().append(resultText);
 
     });
-}
-
-export default {
-    init
 }
