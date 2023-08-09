@@ -1,3 +1,5 @@
+import searchIcon from  '../../images/icons/search_icon.svg';
+import closeMenu from  '../../images/icons/close_menu.svg';
 
 export default function menu(){
 

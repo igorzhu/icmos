@@ -2,6 +2,9 @@ import '../sass/index.scss';
 
 //Импортируем html-шаблоны на js:
 import menu from './templates/menu.js';
+import footer from './templates/footer.js';
+import header from './templates/header.js';
+import search from './templates/search.js';
 
 //Импортируем модули:
 import {showMenu} from './modules/showMenu.js';
@@ -11,8 +14,13 @@ import searchBlock from './modules/search-block.js';
 
 console.log('common.js');
 
+//Вставляем html-шаблоны:
+header();
 menu();
+search();
+footer();
 
+//Вызываем модули:
 newsBlockHeight.init();
 showMenu();
 searchBlock();

@@ -1,14 +1,13 @@
 <!doctype html>
 <html class="news-page">
-@@include('../partials/layout/_head.html', { "title": "Новости" })
+<!-- @@include('../partials/layout/_head.html', { "title": "Новости" }) -->
 <body>
 <!-- <script type="text/javascript">
     window.appModules = ['menu'];
 </script> -->
-<%= require('html-loader!../partials/layout/_menu.html').default %>
-@@include('../partials/layout/_menu.html')
+<!-- @@include('../partials/layout/_menu.html') -->
 	<div class="wrapper">
-		@@include('../partials/layout/_header.html')
+		<!-- @@include('../partials/layout/_header.html') -->
 		<div class="bnr-block">
 			<a href="#">
 				<img src="../../images/bnr.jpg" />
@@ -81,7 +80,7 @@
 					<a class="item__title" href="#">Две незаконные пристройки к зданию ликвидировали в Басманном районе столицы</a>
 				</li>
 			</ul>
-			@@include('../partials/blocks/_paginator.html')
+			<!-- @@include('../partials/blocks/_paginator.html') -->
 
 		</main>
 		<div class="companies">
@@ -104,7 +103,6 @@
 			</a>
 		</div>
 	</div>
-	@@include('../partials/layout/_footer.html')
-<%= require('html-loader!../partials/layout/_footer.html').default %>
+	<!-- @@include('../partials/layout/_footer.html') -->
 </body>
 </html>
