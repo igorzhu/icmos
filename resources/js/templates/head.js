@@ -1,7 +1,6 @@
 export default function head(title){
 
-    let head = `<head>
-            <meta charset="UTF-8">
+    let headContent = `<meta charset="UTF-8">
             <title>${title}</title>
             <link rel="shortcut icon" href="/favicon.ico">
             <link rel="icon" href="/favicon.ico">
@@ -13,9 +12,8 @@ export default function head(title){
             <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
             <!--[if lt IE 10]>
             <script type="text/javascript" src="http://stat.aif.ru/js/css3-multi-column.js"></script><![endif]-->
-            <!--link rel="stylesheet" type="text/css" href="../css/style.css" /-->
-        </head>`;
+            <!--link rel="stylesheet" type="text/css" href="../css/style.css" /-->`;
 
     //$('html').prepend(head);
-    document.documentElement.insertAdjacentHTML('afterbegin', head);
+    document.head.insertAdjacentHTML('afterbegin', headContent);
 }
